@@ -1,3 +1,4 @@
+import { DynamicControlsFormComponent } from './dynamic-controls-form/dynamic-controls-form.component';
 import { Component, afterRender } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { AsyncSyncValidatorsComponent } from './async-sync-validators/async-sync-validators.component';
@@ -6,7 +7,7 @@ import { UpdateFormValuesComponent } from './update-form-values/update-form-valu
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, AsyncSyncValidatorsComponent,UpdateFormValuesComponent],
+  imports: [RouterOutlet, AsyncSyncValidatorsComponent,UpdateFormValuesComponent,DynamicControlsFormComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
