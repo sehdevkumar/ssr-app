@@ -1,0 +1,28 @@
+<div class="min-h-screen flex items-center justify-center bg-gray-900 text-white overflow-hidden">
+  <form [formGroup]="form" (ngSubmit)="submitForm()" class="space-y-6 w-80">
+    <mat-form-field appearance="fill">
+      <mat-label>Username</mat-label>
+      <input matInput type="text" id="username" formControlName="username" class="h-10">
+      <mat-error *ngIf="form.get('username')?.errors?.['required']">Username is required</mat-error>
+      <mat-error *ngIf="form.get('username')?.errors?.['minlength']">Username must be at least 3 characters</mat-error>
+      <mat-error *ngIf="form.get('username')?.errors?.['maxlength']">Username cannot exceed 20 characters</mat-error>
+      <mat-error *ngIf="form.get('username')?.errors?.['usernameExists']">Username already exists</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Email</mat-label>
+      <input matInput type="email" id="email" formControlName="email" class="h-10">
+      <mat-error *ngIf="form.get('email')?.errors?.['required']">Email is required</mat-error>
+      <mat-error *ngIf="form.get('email')?.errors?.['email']">Invalid email format</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Password</mat-label>
+      <input matInput type="password" id="password" formControlName="password" class="h-10">
+      <mat-error *ngIf="form.get('password')?.errors?.['required']">Password is required</mat-error>
+      <mat-error *ngIf="form.get('password')?.errors?.['minlength']">Password must be at least 8 characters</mat-error>
+    </mat-form-field>
+
+    <button type="submit" [disabled]="form.invalid" class="bg-gray-700 text-white font-semibold py-2 px-4 rounded-md hover:bg-gray-600 focus:outline-none focus:ring focus:border-blue-500">Submit</button>
+  </form>
+</div>
