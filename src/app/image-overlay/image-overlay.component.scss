@@ -1,0 +1,13 @@
+.canvas-container {
+  height: 100%;
+  max-width: max-content;
+  display: grid;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  // box-shadow: 8px 10px 19px 6px rgb(126 117 117 / 46%);
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
