@@ -6,11 +6,12 @@ import { AsyncSyncValidatorsComponent } from './async-sync-validators/async-sync
 import { UpdateFormValuesComponent } from './update-form-values/update-form-values.component';
 import { ParentComponent } from './angular-change-deduction/parent/parent.component';
 import {ImageOverlayComponent} from './image-overlay/image-overlay.component'
+import { DeferredLoadingComponent } from './Deferred-Loading/deferred-loading/deferred-loading.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, AsyncSyncValidatorsComponent,UpdateFormValuesComponent,DynamicControlsFormComponent,ParentComponent, ImageOverlayComponent],
+  imports: [RouterOutlet, AsyncSyncValidatorsComponent,UpdateFormValuesComponent,DynamicControlsFormComponent,ParentComponent, ImageOverlayComponent,DeferredLoadingComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
