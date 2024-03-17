@@ -7,7 +7,7 @@ export class MainService {
 
   constructor() {
 
-      console.log("I am from the dummy world")
+      console.log("I am from the Main world")
 
    }
 }

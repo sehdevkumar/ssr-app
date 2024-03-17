@@ -5,5 +5,9 @@ import { Injectable } from '@angular/core';
 })
 export class DummyService {
 
-  constructor() { }
+  constructor() {
+
+    console.log("I am from the dummy world..")
+
+  }
 }
