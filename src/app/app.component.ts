@@ -8,32 +8,20 @@ import { ParentComponent } from './angular-change-deduction/parent/parent.compon
 import {ImageOverlayComponent} from './image-overlay/image-overlay.component'
 import { DeferredLoadingComponent } from './Deferred-Loading/deferred-loading/deferred-loading.component';
 import { EffectsComponent } from './effects/effects.component';
-import { MainService } from './Providers-Injections/main.service';
-import { DummyService } from './Providers-Injections/dummy.service';
-
+import { InjectionsTesterComponent } from './Providers-injection-Topics/injections-tester/injections-tester.component';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, AsyncSyncValidatorsComponent,UpdateFormValuesComponent,DynamicControlsFormComponent,ParentComponent, ImageOverlayComponent,DeferredLoadingComponent,EffectsComponent],
+  imports: [RouterOutlet, AsyncSyncValidatorsComponent,UpdateFormValuesComponent,DynamicControlsFormComponent,ParentComponent, ImageOverlayComponent,DeferredLoadingComponent,EffectsComponent,
+  InjectionsTesterComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
-  // How Injection Token Works
-  providers:[{
-    provide:MainService,
-    useValue: 'sehdev'
-  }]
 })
 export class AppComponent {
   title = 'ssr-app';
 
-  ms = inject(MainService);
-  ds = inject(DummyService);
-
-
 
   constructor() {
-
-    console.log(this.ms)
 
   }
 }

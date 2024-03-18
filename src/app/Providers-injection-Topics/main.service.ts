@@ -5,9 +5,5 @@ import { Injectable } from '@angular/core';
 })
 export class MainService {
 
-  constructor() {
-
-      console.log("I am from the Main world")
-
-   }
+  constructor() { }
 }
