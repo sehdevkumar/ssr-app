@@ -5,16 +5,20 @@ import { Component, OnInit, inject } from '@angular/core'
 import {
   BehaviorSubject,
   Subject,
+  concatMap,
   delay,
+  from,
   interval,
+  map,
+  mergeMap,
   of,
   switchMap,
   takeUntil,
   timer,
 } from 'rxjs'
 import { MatOptionModule } from '@angular/material/core'
-import {MatInputModule} from '@angular/material/input';
-import {MatSelectModule} from '@angular/material/select';
+import { MatInputModule } from '@angular/material/input'
+import { MatSelectModule } from '@angular/material/select'
 @Component({
   selector: 'app-operators',
   standalone: true,
@@ -24,7 +28,7 @@ import {MatSelectModule} from '@angular/material/select';
     MatFormFieldModule,
     MatOptionModule,
     MatInputModule,
-    MatSelectModule
+    MatSelectModule,
   ],
   templateUrl: './operators.component.html',
   styleUrl: './operators.component.scss',
@@ -40,6 +44,32 @@ export class OperatorsComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.concatMapFun()
+  }
+
+   // ============================ConcatMap====================================
+  // ! concatMap use to concat the nested sunscriptions but do  have the  order in which values emitted.
+  concatMapFun() {
+    from([1, 2, 3, 4, 5])
+      .pipe(concatMap((id) => this.getData(id)))
+      .subscribe((res) => {
+        console.log(res)
+      })
+  }
+
+  // ============================MergeMap====================================
+  // ! mergeMap use to merge the nested sunscriptions but do not have the  order in which values emitted.
+  mergeMapFun() {
+    from([1, 2, 3, 4, 5])
+      .pipe(mergeMap((id) => this.getData(id)))
+      .subscribe((res) => {
+        console.log(res)
+      })
+  }
+
+  // ============================SwitchMap======================================
+  //  ? switchMap use to cancel the most recent emitted value and subscribe to the last
+  switchMapFun() {
     this.sub.pipe(switchMap((id) => this.getData(id))).subscribe((res) => {
       this.posts = res
     })
