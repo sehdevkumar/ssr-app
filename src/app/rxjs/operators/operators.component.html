@@ -1,0 +1,13 @@
+<mat-form-field>
+  <mat-select (selectionChange)="onOptionSelect($event)">
+    <mat-option value="1">POST 1</mat-option>
+    <mat-option value="2">POST 2</mat-option>
+    <mat-option value="3">POST 3</mat-option>
+    <mat-option value="4">POST 4</mat-option>
+  </mat-select>
+</mat-form-field>
+
+<div style="background: #23334f;color: white;" class="w-screen p-10">
+  <div>{{ posts?.title }}</div>
+  <p>{{ posts?.body }}</p>
+</div>

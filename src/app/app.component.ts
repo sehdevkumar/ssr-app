@@ -9,11 +9,12 @@ import {ImageOverlayComponent} from './image-overlay/image-overlay.component'
 import { DeferredLoadingComponent } from './Deferred-Loading/deferred-loading/deferred-loading.component';
 import { EffectsComponent } from './effects/effects.component';
 import { InjectionsTesterComponent } from './Providers-injection-Topics/injections-tester/injections-tester.component';
+import { OperatorsComponent } from './rxjs/operators/operators.component';
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [RouterOutlet, AsyncSyncValidatorsComponent,UpdateFormValuesComponent,DynamicControlsFormComponent,ParentComponent, ImageOverlayComponent,DeferredLoadingComponent,EffectsComponent,
-  InjectionsTesterComponent],
+  InjectionsTesterComponent,OperatorsComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
