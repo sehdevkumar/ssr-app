@@ -18,6 +18,7 @@ import { OperatorsComponent } from './rxjs/operators/operators.component'
 import { ContentProjectionComponent } from './content-projection/content-projection.component'
 import { CommonModule } from '@angular/common'
 import { HostElementBindingsComponent } from './host-element-bindings/host-element-bindings.component'
+import { UserProfileComponent } from './view-reference/contentView'
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -35,6 +36,7 @@ import { HostElementBindingsComponent } from './host-element-bindings/host-eleme
     ContentProjectionComponent,
     CommonModule,
     HostElementBindingsComponent,
+    UserProfileComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
