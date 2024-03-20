@@ -1,6 +1,11 @@
 import { config } from './app.config.server'
 import { DynamicControlsFormComponent } from './dynamic-controls-form/dynamic-controls-form.component'
-import { CUSTOM_ELEMENTS_SCHEMA, Component, afterRender, inject } from '@angular/core'
+import {
+  CUSTOM_ELEMENTS_SCHEMA,
+  Component,
+  afterRender,
+  inject,
+} from '@angular/core'
 import { RouterOutlet } from '@angular/router'
 import { AsyncSyncValidatorsComponent } from './async-sync-validators/async-sync-validators.component'
 import { UpdateFormValuesComponent } from './update-form-values/update-form-values.component'
@@ -12,6 +17,7 @@ import { InjectionsTesterComponent } from './Providers-injection-Topics/injectio
 import { OperatorsComponent } from './rxjs/operators/operators.component'
 import { ContentProjectionComponent } from './content-projection/content-projection.component'
 import { CommonModule } from '@angular/common'
+import { HostElementBindingsComponent } from './host-element-bindings/host-element-bindings.component'
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -28,10 +34,11 @@ import { CommonModule } from '@angular/common'
     OperatorsComponent,
     ContentProjectionComponent,
     CommonModule,
+    HostElementBindingsComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
-  schemas:[CUSTOM_ELEMENTS_SCHEMA]
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class AppComponent {
   title = 'ssr-app'
