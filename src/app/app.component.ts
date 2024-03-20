@@ -19,6 +19,7 @@ import { ContentProjectionComponent } from './content-projection/content-project
 import { CommonModule } from '@angular/common'
 import { HostElementBindingsComponent } from './host-element-bindings/host-element-bindings.component'
 import { UserProfileComponent } from './view-reference/contentView'
+import { DynamicComponentsRenderingComponent } from './dynamic-components-rendering/dynamic-components-rendering.component'
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -36,7 +37,8 @@ import { UserProfileComponent } from './view-reference/contentView'
     ContentProjectionComponent,
     CommonModule,
     HostElementBindingsComponent,
-    UserProfileComponent
+    UserProfileComponent,
+    DynamicComponentsRenderingComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
